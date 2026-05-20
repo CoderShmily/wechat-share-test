@@ -2,9 +2,27 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- 微信/QQ 分享必需 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分享页</title>
+
+    <!-- 微信/QQ 抓取分享卡片时，通常只读「首次 HTML」，不会等 JS -->
     <meta property="og:title" content="你的分享标题">
     <meta property="og:description" content="你的分享描述">
     <meta property="og:image" content="https://img0.baidu.com/it/u=2055222165,3403584258&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
+    <main>
+        <h1 id="headline">加载中…</h1>
+        <p class="hint">右键「显示网页源代码」和「检查 → Elements」对比 <code>&lt;title&gt;</code> 与 og meta。</p>
+        <dl>
+            <dt>当前 document.title</dt>
+            <dd id="live-title">—</dd>
+            <dt>当前 og:title（DOM 里）</dt>
+            <dd id="live-og-title">—</dd>
+        </dl>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
